@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_app_primary">#3F51B5</color>
     <color name="my_app_onPrimary">#FFFFFF</color>
+    <color name="my_toolbar_background">#4CAF50</color> <!-- Nosso verde -->
+    <color name="my_awesome_red">#F44336</color> <!-- Seu novo vermelho -->
 </resources>
