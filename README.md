@@ -1,30 +1,29 @@
-# ActionBar e Temas com Material 3
+# Estudo de ActionBar e Temas com Material 3
 
-Este projeto é um estudo prático sobre como implementar e personalizar uma `TopAppBar` (a evolução da `ActionBar`) utilizando os componentes do Material Design 3 em uma aplicação Android nativa.
+Este projeto é um estudo prático e evolutivo sobre como implementar e personalizar a `TopAppBar` (a evolução da `ActionBar`) e os temas de um aplicativo Android, utilizando os componentes do Material Design 3.
 
-O código foi desenvolvido como uma adaptação e modernização dos conceitos apresentados no livro de desenvolvimento Android de Ricardo R. Lacheta, atualizando as práticas para as bibliotecas e estilos mais recentes recomendados pelo Google.
+O código foi desenvolvido como uma adaptação e modernização dos conceitos apresentados no livro de desenvolvimento Android de Ricardo R. Lacheta, atualizando as práticas para as bibliotecas e estilos mais recentes.
 
-## ✨ Funcionalidades
+## ✨ Funcionalidades e Conceitos Aprendidos
 
-- Implementação de uma `MaterialToolbar` para servir como `TopAppBar`.
-- Uso de um tema baseado no Material 3 (`Theme.Material3.DayNight.NoActionBar`).
-- Criação de um menu de opções (`res/menu/menu_main.xml`).
-- Inflação do menu na `TopAppBar` e manipulação de eventos de clique nos itens.
+Este projeto cobre desde a criação básica de uma `TopAppBar` até a personalização avançada de cores e temas.
 
-## 🛠️ Como foi construído
+### 1. Estrutura Básica da TopAppBar
+- **Tema "NoActionBar"**: O projeto utiliza um tema que herda de `Theme.Material3.DayNight.NoActionBar`, permitindo que a `TopAppBar` seja adicionada e controlada diretamente no layout da `Activity`.
+- **Componente `MaterialToolbar`**: A `com.google.android.material.appbar.MaterialToolbar` é utilizada como a `TopAppBar` principal do aplicativo.
 
-O projeto segue uma estrutura simples, focada em demonstrar a configuração da `TopAppBar`:
+### 2. Menus e Navegação
+- **Criação de Menu**: O menu de opções da barra é definido em `res/menu/menu_main.xml`.
+- **Manipulação de Cliques**: O `onOptionsItemSelected` na `Activity` é usado para identificar e responder aos cliques nos itens de menu.
+- **Navegação entre Telas**: Foi implementada a navegação para uma `SecondActivity` através de um ícone na `TopAppBar`, utilizando `Intent`.
+- **Botão "Voltar" (Up Button)**: A `SecondActivity` possui um botão de "voltar" na `TopAppBar` para retornar à tela principal.
 
-1.  **Configuração do Tema**: O tema principal do app em `res/values/themes.xml` foi definido para herdar de `Theme.Material3.DayNight.NoActionBar`, nos dando controle total sobre a barra de topo da aplicação.
-
-2.  **Layout da Atividade**: No arquivo `res/layout/activity_main.xml`, a `com.google.android.material.appbar.MaterialToolbar` foi adicionada para servir como a barra de topo visual.
-
-3.  **Criação do Menu**: Foi criado o arquivo `res/menu/menu_main.xml` para declarar os itens que deveriam aparecer no menu, como "Pesquisar" e "Configurações", definindo como e quando eles deveriam ser exibidos (ícone ou no menu flutuante).
-
-4.  **Lógica na `MainActivity.kt`**:
-    - A `MaterialToolbar` do layout é encontrada e configurada como a `SupportActionBar` da atividade.
-    - O método `onCreateOptionsMenu` é sobrescrito para "inflar" (carregar) o arquivo de menu `menu_main.xml` na toolbar.
-    - O método `onOptionsItemSelected` é sobrescrito para capturar os cliques nos itens de menu e executar uma ação (neste caso, exibir um `Toast`).
+### 3. Personalização de Cores e Temas
+- **Sistema de Cores do Material 3**: O projeto demonstra o uso de atributos de tema (`?attr/`) para criar um design consistente.
+- **Cores do Tema**: O arquivo `res/values/themes.xml` é usado para definir as cores globais do aplicativo, como `colorPrimary` e `colorOnPrimary`.
+- **Estilo Individual de Componente**: A `TopAppBar` da `MainActivity` recebeu uma cor de fundo específica (`@color/my_awesome_red`) diretamente no arquivo de layout XML, demonstrando como sobrescrever o tema global.
+- **Controle da Barra de Status (`StatusBar`)**: A cor da barra de status do sistema (onde fica o relógio) é personalizada através do atributo `android:statusBarColor` no tema, mostrando como unificar (ou não) a cor com a `TopAppBar`.
+- **Definição de Cores**: Novas cores foram adicionadas e gerenciadas no arquivo `res/values/colors.xml`.
 
 ## 🚀 Como executar
 
